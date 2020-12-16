@@ -17,12 +17,19 @@ data = requests.get('https://www.genie.co.kr/chart/top200?ditc=D&rtm=N&ymd=20200
 soup = BeautifulSoup(data.text, 'html.parser')
 
 trs = soup.select('#body-content > div.newest-list > div > table > tbody > tr')
+print(trs)
+
 # 아래 빈 칸('')을 채워보세요
 for tr in trs:
+    title = tr.select_one('td.info > a.title.ellipsis').text.strip()
+    #print(title)
     rank = tr.select_one('td.number').text[0:2].strip()
-    title = tr.select_one('td.info > a.title.ellipsis0').text.strip()
-    artist = tr.select_one('').text
-    print(rank, title, artist)0
+    #***랭크부분에서 순위가 제대로 출력이 안됨!!!! ***
+    #print(rank.text[0:2].strip())
+#      td.info > a.title.ellipsis
+    artist = tr.select_one('td.info > a.artist.ellipsis').text
+    #print(artist)
+    print(rank, title, artist)
 
 
 
