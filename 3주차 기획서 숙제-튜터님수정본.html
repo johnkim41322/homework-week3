@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <!-- 구글폰트 -->
+    <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
+    <title>스파르타코딩클럽 | 나홀로 메모장</title>
+    <!-- style -->
+    <style type="text/css">
+        * {
+            font-family: 'Stylish', sans-serif;
+        }
+
+        .wrap {
+            width: 900px;
+            margin: auto;
+        }
+
+        .comment {
+            color: blue;
+            font-weight: bold;
+        }
+
+        .post-box {
+            width: 700px;
+            margin: 20px auto;
+            padding: 50px;
+            border: black solid;
+            border-radius: 5px;
+        }
+    </style>
+    <script>
+        function hey() {
+            alert('안녕!!!');
+        }
+    </script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://jqueryui.com/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#datetimepicker1").datepicker();
+        });
+    </script>
+</head>
+<body>
+<div class="wrap">
+    <div class="jumbotron">
+        <h1 class="display-4">어려운 타이어교환, 이제 MY 타이어샵에서 도와드리겠습니다! </h1>
+        <p class="lead">중요한 링크를 저장해두고, 나중에 볼 수 있는 공간입니다</p>
+        <hr class="my-4">
+        <p class="lead">
+            <a onclick="hey()" btn btn-primary btn-lg" href="#" role="button">포스팅박스 열기</a>
+        </p>
+    </div>
+    <div class="form-post post-box">
+        <div>
+        </div>
+        <div class="form-group">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01">교환장소</label>
+                </div>
+                <select class="custom-select" id="inputGroupSelect01">
+                    <option selected>교환지역을 선택하세요...</option>
+                    <option value="1">서울</option>
+                    <option value="2">경기도</option>
+                    <option value="3">인천</option>
+                </select>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01">사이즈</label>
+                </div>
+                <select class="custom-select" id="inputGroupSelect01">
+                    <option selected>사이즈를선택하세요...</option>
+                    <option value="1">245/45/20</option>
+                    <option value="2">255/45/20</option>
+                    <option value="3">265/45/20</option>
+                </select>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01">제조사</label>
+                </div>
+                <select class="custom-select" id="inputGroupSelect01">
+                    <option selected>벤츠...</option>
+                    <option value="1">현대</option>
+                    <option value="2">기아</option>
+                    <option value="3">쉐보레</option>
+                </select>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01">모델</label>
+                </div>
+                <select class="custom-select" id="inputGroupSelect01">
+                    <option selected>S-Class...</option>
+                    <option value="1">E-Class</option>
+                    <option value="2">C-Class</option>
+                    <option value="3">A-Class</option>
+                </select>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01">교환날짜</label>
+                </div>
+                <select class="custom-select" id="inputGroupSelect01">
+                    <option selected>희망날짜를 선택하세요...</option>
+                    <option value="1">1월</option>
+                    <option value="2">2월</option>
+                    <option value="3">3월</option>
+                </select>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class='col-sm-6'>
+                        <div class="form-group">
+                            <div class='input-group date'>
+                                <input type='text' class="form-control" id='datetimepicker1'/>
+                                <span class="input-group-addon">
+               <span class="glyphicon glyphicon-calendar"></span>
+               </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-primary btn-lg btn-block">견적요청</button>
+    </div>
+</div>
+<div class="card-columns">
+    <div class="card">
+        <img class="card-img-top"
+             src="https://file4.bobaedream.co.kr/partner/2010/07/16/1279275504_1.jpg"
+             alt="Card image cap">
+        <div class="card-body">
+            <a href="#" class="card-title">강남 인치업나라</a>
+            <p class="card-text">네이버후기보고 벤츠E250 윈터타이어 미세린으로 교환했습니다. 기존타이어 트레드가 많이남아 있어서 버리기 아까웠는데 사장님께서 별도로5만원에 보관서비스도 해
+                주셨습니다. 감사합니다. 대박나세요 ^^ </p>
+            <p class="card-text comment">실제고객님의 생생후기!</p>
+        </div>
+    </div>
+    <div class="card">
+        <img class="card-img-top"
+             src="http://www.abctire.co.kr/upload_image/freeshop/369_1.jpg"
+             alt="Card image cap">
+        <div class="card-body">
+            <a href="#" class="card-title">영등포 타이어프로</a>
+            <p class="card-text">현대소나타 하이브리드 한개만 순정 금호타이어로 교환했습니다. 최저가 보단 3천원 비쌌지만... 찾는 수고를 덜어줘서 만족하고 갑니다. ^^</p>
+            <p class="card-text comment">실제고객님의 생생후기!</p>
+        </div>
+    </div>
+    <div class="card">
+        <img class="card-img-top"
+             src="http://www.abctire.co.kr/upload_image/freeshop/%ED%95%9C%EA%B5%AD%ED%83%80%EC%9D%B4%EC%96%B4%20%EC%8B%A0%EB%A6%BC%EC%A0%90%20(4).jpg"
+             alt="Card image cap">
+        <div class="card-body">
+            <a href="#" class="card-title">마포 T스테이션</a>
+            <p class="card-text">12월 런칭행사때 타이어 4짝 20% 프로모션받고 교환했습니다. 한번하면 오래 사용하니, 제대로 투자하고 갑니다. ^^</p>
+            <p class="card-text comment">실제고객님의 생생후기!</p>
+        </div>
+    </div>
+    <div class="card">
+        <img class="card-img-top"
+             src="https://file4.bobaedream.co.kr/partner/2019/04/05/1554461018_1.jpg"
+             alt="Card image cap">
+        <div class="card-body">
+            <a href="#" class="card-title">여의도 타이어시티</a>
+            <p class="card-text"> 제차가 아우디 A6인데..... 얼라이머트까지 무료로 잡아주시고, 하체 틀어진 것 까지 교정해서 교환해 주셨습니다. 강력추천합니다.</p>
+            <p class="card-text comment">실제고객님의 생생후기!</p>
+        </div>
+    </div>
+    <div class="card">
+        <img class="card-img-top"
+             src="http://www.abctire.co.kr/upload_image/freeshop/1126_01.jpg"
+             alt="Card image cap">
+        <div class="card-body">
+            <a href="#" class="card-title">청담동 타이어테크</a>
+            <p class="card-text">요즘 다휘어뱅크 사건으로 뒤숭숭한데.... 여기는 바가지, 과잉청구없이, 딱 문제있는 타이어만 정직하게 교한해 주셔서 추천드립니다. </p>
+            <p class="card-text comment">실제고객님의 생생후기!</p>
+        </div>
+    </div>
+    <div class="card">
+        <img class="card-img-top"
+             src="http://www.abctire.co.kr/upload_image/freeshop/%EB%B8%8C%EB%A6%AC%EC%A7%80%EC%8A%A4%ED%86%A41.jpg"
+             alt="Card image cap">
+        <div class="card-body">
+            <a href="#" class="card-title">부평 브릿지스톤타이어</a>
+            <p class="card-text">가격이 부담되어서 자녁 이월생산 타이어로 교환하셨습니다. 사장님께서 친철하게 설명해주시고, 또 재고타이어 30% 할인행사로 만족구매하고 갑니다. ^^</p>
+            <p class="card-text comment">실제고객님의 생생후기!</p>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>
