@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <!-- 구글폰트 -->
+    <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
+    <title>TITLE</title>
+    <script>
+
+        let params = new window.URLSearchParams(window.location.search);
+        let area = params.get('area');
+        let size_idx = params.get('size_idx');
+        let manufacturer_idx = params.get('manufacturer_idx');
+        let model_idx = params.get('model_idx');
+
+        $(document).ready(function(){
+            getStore()
+        })
+
+        function getStore() {
+            $.ajax({
+                type: "GET",
+                url: `/stores?area=${area}&size_idx=${size_idx}&manufacturer_idx=${manufacturer_idx}&model_idx=${model_idx}`,
+                data: {},
+                success: function (response) {
+                    let stores = response['stores']
+                    for(let i = 0 ; i < stores.length ; i++){
+                        makeStores(stores[i], i);
+                    }
+                }
+            })
+        }
+
+        function makeStores(store, index){
+            let tmplHtml = `<tr>
+                              <th scope="row">${++index}</th>
+                              <td>${store['WorkshopName']}</td>
+                              <td>${store['ClosedDays']}</td>
+                              <td>${store['Address']}</td>
+                            </tr>`;
+            $("#stores").append(tmplHtml);
+        }
+
+    </script>
+</head>
+<body>
+<div class="container table-responsive py-5">
+<table class="table table-bordered table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">대리점</th>
+      <th scope="col">휴일</th>
+      <th scope="col">주소</th>
+    </tr>
+  </thead>
+  <tbody id="stores">
+
+  </tbody>
+</table>
+</div>
+</body>
+</html>
